@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> 
+    <title>ElectroTech - Carrito de Compras</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1>ElectroTech - Carrito de Compras</h1>
+                <form id="cart-form">
+                    <div class="form-group">
+                        <label for="customerName">Nombre del Cliente</label>
+                        <input type="text" class="form-control" id="customerName" placeholder="Nombre del Cliente" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerRUT">RUT del Cliente (opcional)</label>
+                        <input type="text" class="form-control" id="customerRUT" placeholder="RUT del Cliente">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="productSelect">Seleccionar Producto</label>
+                        <select class="form-control" id="productSelect">
+                            <option value="producto1">Camara - $15</option>
+                            <option value="producto2">Television - $30</option>
+                            <option value="producto3">Computadora - $50</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="addToCart">Agregar al Carrito</button>
+                </form>
+                <hr>
+                <h3>Carrito de Compras</h3>
+                <div class="table-responsive"> <!-- Para que la tabla sea responsive en dispositivos pequeños -->
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio Unitario</th>
+                                <th>Total</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartItems">
+                        </tbody>
+                    </table>
+                </div>
+                <h4>Total: $<span id="cartTotal">0</span></h4>
+                <hr>
+                <div class="form-group">
+                    <label for="customerType">Tipo de Cliente</label>
+                    <select class="form-control" id="customerType">
+                        <option value="consumidorFinal">Consumidor Final</option>
+                        <option value="rut">RUT</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-primary" id="generateInvoice">Generar Boleta</button>
+                <div id="customerInfo" style="display: none;">
+                    <h4>Información del Cliente</h4>
+                    <p><strong>Nombre:</strong> <span id="customerNameDisplay"></span></p>
+                    <p><strong>RUT:</strong> <span id="customerRUTDisplay"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
